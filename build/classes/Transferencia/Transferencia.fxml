@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="391.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Transferencia.TransferenciaController">
+    <children>
+      <Label layoutX="66.0" layoutY="14.0" text="Transferência">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_c" layoutX="80.0" layoutY="237.0" onAction="#cButtonAction" prefHeight="25.0" prefWidth="109.0" text="Confirmar" />
+      <Label layoutX="48.0" layoutY="90.0" text="Número da conta :" />
+      <TextField fx:id="txt_n" layoutX="154.0" layoutY="90.0" />
+      <Label layoutX="113.0" layoutY="120.0" text="Valor :" />
+      <TextField fx:id="txt_v" layoutX="154.0" layoutY="120.0" />
+      <Label fx:id="res" layoutX="53.0" layoutY="282.0" prefHeight="58.0" prefWidth="335.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_v" layoutX="222.0" layoutY="237.0" mnemonicParsing="false" onAction="#vButtonAction" text="Voltar" />
+      <Button fx:id="btn_s" layoutX="280.0" layoutY="237.0" mnemonicParsing="false" onAction="#sButtonAction" text="Sair" />
+      <RadioButton fx:id="r_cc" layoutX="179.0" layoutY="150.0" mnemonicParsing="false" onAction="#cc" text="Conta Corrente">
+         <toggleGroup>
+            <ToggleGroup fx:id="Mygroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="r_cp" layoutX="179.0" layoutY="180.0" mnemonicParsing="false" onAction="#cp" text="Conta Poupanca" toggleGroup="$Mygroup" />
+      <Label layoutX="34.0" layoutY="172.0" text="Informe o tipo da Conta" />
+    </children>
+</AnchorPane>
