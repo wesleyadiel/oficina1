@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControlarEstoqueMP.ControlarEstoqueMPController">
+   <children>
+      <Label layoutX="17.0" layoutY="29.0" text="Lançar estoque de Matéria Prima">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="113.0" text="Descrição da matéria prima :" />
+      <Label layoutX="186.0" layoutY="144.0" text="Quantidade : " />
+      <Button fx:id="btn_l" layoutX="176.0" layoutY="188.0" mnemonicParsing="false" onAction="#lButtonAction" text="Lançar" />
+      <Button fx:id="btn_s" layoutX="255.0" layoutY="188.0" mnemonicParsing="false" onAction="#sButtonAction" text="Sair" />
+      <Button fx:id="btn_v" layoutX="320.0" layoutY="188.0" mnemonicParsing="false" onAction="#vButtonAction" text="Voltar" />
+      <TextField fx:id="txt_d" layoutX="258.0" layoutY="109.0" />
+      <TextField fx:id="txt_q" layoutX="258.0" layoutY="140.0" />
+      <Label fx:id="res" layoutX="85.0" layoutY="241.0" prefHeight="58.0" prefWidth="403.0">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,27 +1,48 @@
 package acchpoo;
 
-public class Relatorio {
+public class Mercadoria {
 
-    /*public Relatorio() {
-    }*/
-    public void gerarRelatorioC(ContaCorrente contaCorrente) {
-        String relatorio = "\n*RELATÓRIO DA CONTA CORRENTE *"
-                + "\nNumero : " + contaCorrente.getNumero()
-                + "\nSaldo  após o saque : " + contaCorrente.getSaldo()
-                + "\nTaxa de Operação : " + contaCorrente.getTaxaDeOperacao();
-        mostrarDadosDoObjeto(relatorio);
+    private String descricao, marca, tipo, grupo;
+    private int quantidade;
+
+    public String getGrupo() {
+        return grupo;
     }
 
-    public void gerarRelatorioP(ContaPoupanca contaPoupanca) {
-        String relatorio = "\n*RELATÓRIO DA CONTA POUPANCA *"
-                + "\nNumero : " + contaPoupanca.getNumero()
-                + "\nSaldo após o saque : " + contaPoupanca.getSaldo()
-                + "\nLimite : " + contaPoupanca.getLimite();
-        mostrarDadosDoObjeto(relatorio);
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
     }
 
-    public void mostrarDadosDoObjeto(String relatorio) {
-        System.out.println(relatorio);
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }

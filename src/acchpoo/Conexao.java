@@ -92,8 +92,8 @@ public class Conexao {
         }
     }
 
-    public ResultSet ListarUsuarioesUE() {
-        String sql = "SELECT * FROM  Empregado";
+    public ResultSet ListarEstoqueMP() {
+        String sql = "SELECT * FROM  EstoqueMP";
         try {
             Statement stm = con.createStatement();
             ResultSet res = stm.executeQuery(sql);
@@ -105,8 +105,8 @@ public class Conexao {
         }
     }
 
-    public ResultSet ListarContasCP() {
-        String sql = "SELECT * FROM  ContaPoupanca";
+    public ResultSet ListarEstoqueMercadoria() {
+        String sql = "SELECT * FROM  EstoqueMercadoria";
         try {
             Statement stm = con.createStatement();
             ResultSet res = stm.executeQuery(sql);
@@ -118,7 +118,29 @@ public class Conexao {
         }
     }
 
-    public void removerContaCC(int numeroCC) {
+    public void removerEncomenda(String descricao) {
+        try {
+            PreparedStatement stmt = con.prepareStatement("DELETE FROM encomenda "
+                    + "WHERE descricao = '" + descricao + "' ");
+            stmt.execute();
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removerMercadoria(String descricao) {
+        try {
+            PreparedStatement stmt = con.prepareStatement("DELETE FROM mercadoria "
+                    + "WHERE descricao = '" + descricao + "' ");
+            stmt.execute();
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*  public void removerContaCC(int numeroCC) {
         try {
             PreparedStatement stmt = con.prepareStatement("DELETE FROM ContaCorrente "
                     + "WHERE numero = '" + numeroCC + "' ");
@@ -128,17 +150,7 @@ public class Conexao {
             e.printStackTrace();
         }
     }
-
-    public void removerContaCP(int numeroCP) {
-        try {
-            PreparedStatement stmt = con.prepareStatement("DELETE FROM ContaPoupanca "
-                    + "WHERE numero = '" + numeroCP + "' ");
-            stmt.execute();
-            stmt.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+     */
 
     public Connection getConnection() {
         return con;

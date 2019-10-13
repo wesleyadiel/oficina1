@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CadastrarGrupo;
 
 import acchpoo.Banco;
 import acchpoo.Conexao;
+import acchpoo.Grupo;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -21,11 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-/**
- * FXML Controller class
- *
- * @author free
- */
+
 public class CadastrarGrupoController implements Initializable {
      @FXML
     private Button btn_c;
@@ -47,7 +39,7 @@ public class CadastrarGrupoController implements Initializable {
             Banco b = new Banco(c);
             Grupo g = new Grupo();
         try {
-            g.setDesricao(txt_g.getText());
+            g.setDescricao(txt_g.getText());
             b.inserirGrupo(g);
             txt_r.setText("Cadastrado com sucesso!");
         } catch (Exception e) {

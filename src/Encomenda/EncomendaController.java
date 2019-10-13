@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Agendamento;
+package Encomenda;
 
 import acchpoo.Banco;
 import acchpoo.Conexao;
+import acchpoo.Encomenda;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -22,12 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author free
- */
-public class AgendamentoController implements Initializable {
+public class EncomendaController implements Initializable {
 
     @FXML
     private Button btn_fc;
@@ -59,22 +50,19 @@ public class AgendamentoController implements Initializable {
     @FXML
     private TextField txt_d;
 
-
     @FXML
     void fButtonAction(ActionEvent event) throws SQLException {
         Conexao c = new Conexao();
         Banco b = new Banco(c);
-        Agendamento a = new Agendamento();
+        Encomenda ec = new Encomenda();
         try {
-            if (Integer.parseInt(txt_n.getText()) > 0 || Double.parseDouble(txt_s.getText()) > 0) {
-                a.setNome(Integer.parseInt(txt_n.getText()));
-                a.setTipo(Double.parseDouble(txt_t.getText()));
-                a.setQuantidade(Integer.parseInt(txt_q.getText()));
-                a.setData(Double.parseDouble(txt_d.getText()));
-                a.setNomeCliente(txt_nc.getText());
-                b.inserirAgendamento(a);
-                txt_r.setText("Agendado com sucesso!");
-            }
+            ec.setDescricao(txt_n.getText());
+            ec.setTipo(txt_t.getText());
+            ec.setQuantidade(Integer.parseInt(txt_q.getText()));
+            ec.setData(Integer.parseInt(txt_d.getText()));
+            ec.setNomeCliente(txt_nc.getText());
+            b.inserirEncomenda(ec);
+            txt_r.setText("Agendado com sucesso!");
         } catch (Exception e) {
             txt_r.setText("Dados inválidos!");
         }
@@ -105,7 +93,7 @@ public class AgendamentoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }
 
 }

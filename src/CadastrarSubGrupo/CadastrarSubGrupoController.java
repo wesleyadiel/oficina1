@@ -2,6 +2,7 @@ package CadastrarSubGrupo;
 
 import acchpoo.Banco;
 import acchpoo.Conexao;
+import acchpoo.SubGrupo;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -43,7 +44,7 @@ public class CadastrarSubGrupoController implements Initializable {
             Banco b = new Banco(c);
             SubGrupo sg = new SubGrupo();
         try {
-            sg.setDesricao(txt_d.getText());
+            sg.setDescricao(txt_d.getText());
             sg.setGrupo(txt_g.getText());
             b.inserirSubGrupo(sg);
             txt_r.setText("Cadastrado com sucesso!");

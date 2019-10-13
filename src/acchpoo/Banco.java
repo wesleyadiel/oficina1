@@ -3,9 +3,8 @@ package acchpoo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
-public class Banco implements Impressao {
+public class Banco {
 
     /*    public Banco() {
     }
@@ -24,104 +23,94 @@ public class Banco implements Impressao {
 
     private Conexao conexao;
 
-    public void removerUsuario(UsuarioEmpregado usuarioEmpregado) {
-        conexao.removerUsuarioUE(usuarioEmpregado.numero);
+    public void removerMercadoria(Mercadoria mercadoria) {
+        conexao.removerMercadoria(mercadoria.getDescricao());
     }
 
-    public void inserirUsuario(UsuarioEmpregado usuarioEmpregado) {
-        String sql = "INSERT INTO ContaCorrente(numero,saldo,taxaDeOperacao) VALUES('"
-                + contaCorrente.getNumero() + "','" + contaCorrente.getSaldo() + "','" + contaCorrente.getTaxaDeOperacao() + "');";
+    public void inserirMercadoria(Mercadoria mercadoria) {
+        String sql = "INSERT INTO Mercadoria(descricao, marca, tipo) VALUES('"
+                + mercadoria.getDescricao() + "','" + mercadoria.getMarca() + "','" + mercadoria.getTipo() + "');";
 
         int res = conexao.executeSQL(sql);
 
         if (res > 0) {
-            System.out.println("Conta Corrente cadastrada com sucesso!");
+            System.out.println("Mercadoria cadastrada com sucesso!");
         } else {
             System.out.println("Erro!");
         }
     }
 
-    public void inserirConta(ContaPoupanca contaPoupanca) {
-        String sql = "INSERT INTO ContaPoupanca(numero,saldo,limite) VALUES('" 
-                + contaPoupanca.getNumero() + "','" + contaPoupanca.getSaldo() + "','" + contaPoupanca.getLimite() + "')";
+    public void inserirEncomenda(Encomenda encomenda) {
+        String sql = "INSERT INTO Encomenda(descricao, tipo , NomeCliente, quantidade, data) VALUES('"
+                + encomenda.getDescricao() + "','" + encomenda.getTipo() + "','" + encomenda.getNomeCliente() + "','" + encomenda.getQuantidade() + "','" + encomenda.getData() + "')";
 
         int res = conexao.executeSQL(sql);
 
         if (res > 0) {
-            System.out.println("Conta Poupanca cadastrada com sucesso!");
+            System.out.println("Encomenda cadastrada com sucesso!");
         } else {
             System.out.println("Erro!");
         }
 
     }
 
-    public void removerConta(ContaPoupanca contaPoupanca) {
-        conexao.removerContaCP(contaPoupanca.getNumero());
-    }
+    public void inserirSubGrupo(SubGrupo sg) {
+        String sql = "INSERT INTO ContaPoupanca(descricao, grupo) VALUES('"
+                + sg.getDescricao() + "','" + sg.getGrupo() + "')";
 
-    public ContaBancaria consultarContaCC(int numConta) throws SQLException {
-        ContaBancaria contaBancaria = new ContaCorrente();
-        String sql = "SELECT numero, saldo FROM  ContaCorrente WHERE numero='" + numConta + "'";
+        int res = conexao.executeSQL(sql);
 
-        Statement stm = conexao.getCon().createStatement();
-        ResultSet rs = stm.executeQuery(sql);
-        rs.next();
-        contaBancaria.setNumero(rs.getInt("numero"));
-        contaBancaria.setSaldo(rs.getDouble("saldo"));
-        return contaBancaria;
-    }
-
-    public ContaBancaria consultarContaCP(int numConta) throws SQLException {
-        ContaBancaria contaBancaria = new ContaPoupanca();
-
-        String sql = "SELECT numero, saldo FROM  ContaPoupanca WHERE numero='" + numConta + "'";
-
-        Statement stm = conexao.getCon().createStatement();
-        ResultSet rs = stm.executeQuery(sql);
-        rs.next();
-        contaBancaria.setNumero(rs.getInt("numero"));
-        contaBancaria.setSaldo(rs.getDouble("saldo"));
-        return contaBancaria;
-    }
-
-    public void atualizarcc(double novosaldo, int numero) throws SQLException {
-        String sql = "UPDATE ContaCorrente SET Saldo = '" + novosaldo + "' WHERE numero ='" + numero + "';";
-        Statement stm = conexao.getCon().createStatement();
-        stm.executeUpdate(sql);
-    }
-
-    public void atualizarcp(double novosaldo, int numero) throws SQLException {
-        String sql = "UPDATE ContaPoupanca SET Saldo = '" + novosaldo + "' WHERE numero ='" + numero + "';";
-        Statement stm = conexao.getCon().createStatement();
-        stm.executeUpdate(sql);
-    }
-
-    @Override
-    public void mostrarDados() {
-        Scanner sc = new Scanner(System.in);
-        int numConta = sc.nextInt();
-        System.out.println("Informe o número da conta bancária da qual deseja exibir um extrato : ");
-        String sql = "SELECT cb.numero, cb.saldo, cc.taxaDeOperacao, cp.limite FROM  ContaCorrente cc"
-                + "INNER JOIN ContaBancaria cb  ON" + numConta + "=cc.id_contaC"
-                + "INNER JOIN ContaPoupanca cp ON" + numConta + "=cp.id_contaP;";
-        ResultSet rs = conexao.executeBusca(sql);
-        try {
-            while (rs.next()) {
-                int numero = rs.getInt("cb.numero");
-                double saldo = rs.getDouble("cb.saldo");
-                double taxaOp = rs.getDouble("cc.taxaDeOperacao");
-                double limite = rs.getDouble("cp.limite");
-                System.out.println("*EXTRATO BANCÁRIO*"
-                        + "\n*DADOS DA CONTA BANCÁRIA*"
-                        + "\nNumero : " + numero
-                        + "\nSaldo : " + saldo
-                        + "\n*DADOS DA CONTA CORRENTE*"
-                        + "\nTaxa de operação : " + taxaOp
-                        + "\n*DADOS DA CONTA POUPANCA*"
-                        + "\nLimite : " + limite);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (res > 0) {
+            System.out.println("Sub Grupo cadastrado com sucesso!");
+        } else {
+            System.out.println("Erro!");
         }
+
     }
+
+    public void inserirGrupo(Grupo g) {
+        String sql = "INSERT INTO ContaPoupanca(descricao) VALUES('"
+                + g.getDescricao() + "')";
+
+        int res = conexao.executeSQL(sql);
+
+        if (res > 0) {
+            System.out.println("Grupo cadastrado com sucesso!");
+        } else {
+            System.out.println("Erro!");
+        }
+
+    }
+
+    public void removerEncomenda(Encomenda encomenda) {
+        conexao.removerEncomenda(encomenda.getDescricao());
+    }
+
+    public Mercadoria consultarMercadoria(String descricao) throws SQLException {
+        Mercadoria mercadoria = new Mercadoria();
+        String sql = "SELECT descricao, marca, tipo, grupo, quantidade FROM  ContaCorrente WHERE descricao='" + descricao + "'";
+
+        Statement stm = conexao.getCon().createStatement();
+        ResultSet rs = stm.executeQuery(sql);
+        rs.next();
+        mercadoria.setDescricao(rs.getString("descricao"));
+        mercadoria.setMarca(rs.getString("marca"));
+        mercadoria.setTipo(rs.getString("tipo"));
+        mercadoria.setGrupo(rs.getString("grupo"));
+        mercadoria.setQuantidade(rs.getInt("quantidade"));
+        return mercadoria;
+    }
+
+    public void atualizarEstoqueM(String descricao, int novaQuantidade) throws SQLException {
+        String sql = "UPDATE estoqueMercadoria SET quantidade = '" + novaQuantidade + "' WHERE descricao ='" + descricao + "';";
+        Statement stm = conexao.getCon().createStatement();
+        stm.executeUpdate(sql);
+    }
+
+    public void atualizarEstoqueMP(String descricao, int novaQuantidade) throws SQLException {
+        String sql = "UPDATE estoqueMP SET quantidade = '" + novaQuantidade + "' WHERE descricao ='" + descricao + "';";
+        Statement stm = conexao.getCon().createStatement();
+        stm.executeUpdate(sql);
+    }
+
 }

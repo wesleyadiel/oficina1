@@ -1,87 +1,52 @@
 package acchpoo;
 
-public class ContaPoupanca extends ContaBancaria implements Impressao {
+public class Encomenda {
 
-    private double limite;
-    private Conexao c = new Conexao();
-    private Banco b = new Banco(c);
+    private String descricao, NomeCliente, tipo;
+    private int quantidade, data;
 
-    /*    public ContaPoupanca(double limite) {
-        this.limite = limite;
-    }
-     */
-    public ContaPoupanca() {
-        this.numero = 0;
-        this.saldo = 0;
-        this.limite = 20;
+    public String getNomeCliente() {
+        return NomeCliente;
     }
 
-    @Override
-    public void mostrarDados() {
-        System.out.println("\nNumero da conta poupança : " + numero + "\nSaldo da conta poupança : " + saldo + "\nTaxa de operação da conta corrente : " + limite);
+    public void setNomeCliente(String NomeCliente) {
+        this.NomeCliente = NomeCliente;
     }
 
-    @Override
-    public void sacar(double saque) {
-        double saldoAntigo = saldo;
-        double limiteAntigo = limite;
-        if (saldo >= saque) {
-            this.saldo = saldo - saque;
-        } else if (saque > saldo) {
-            double aux;
-            aux = saque - saldo; //recebe a diferença entre saque e saldo
-            this.limite = limite - aux; // desconta ela no limite
-            this.saldo = saldo - saque; // atualiza o valor do saldo
-
-            if (saldo < 0 && limite >= 0) {
-                System.out.println("Atenção seu saldo está negativo : " + saldo + "Limite : " + limite);
-            } else {
-                this.saldo = saldoAntigo;
-                this.limite = limiteAntigo;
-                System.out.println("Não foi possível sacar! O valor passou do limite!");
-            }
-        }
+    public String getTipo() {
+        return tipo;
     }
 
-    public Conexao getC() {
-        return c;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public void setC(Conexao c) {
-        this.c = c;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Banco getB() {
-        return b;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setB(Banco b) {
-        this.b = b;
+    public void setNome(String descricao) {
+        this.descricao = descricao;
     }
 
-    public double getLimite() {
-        return limite;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setLimite(double limite) {
-        this.limite = limite;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    @Override
-    public void depositar(double valor) {
-        this.saldo = saldo + valor;
+    public int getData() {
+        return data;
     }
 
-    @Override
-    public void depositar(ContaBancaria contaBancaria, double valor) {
-        contaBancaria.saldo = contaBancaria.saldo + valor;
-    }
-
-    @Override
-    public void transferir(double valor, ContaBancaria contaBancaria) {
-        sacar(valor);
-        depositar(contaBancaria, valor);
-
+    public void setData(int data) {
+        this.data = data;
     }
 
 }

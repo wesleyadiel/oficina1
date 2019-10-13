@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadCorrente.CadCorrenteController">
+<AnchorPane id="AnchorPane" prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Encomenda.EncomendaController">
     <children>
         <Button fx:id="btn_fc" layoutX="93.0" layoutY="238.0" onAction="#fButtonAction" text="Encomendar" />
       <Label layoutX="7.0" layoutY="20.0" text="Agendamento de encomenda">
@@ -14,7 +14,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="97.0" layoutY="65.0" text="Nome :" />
+      <Label layoutX="38.0" layoutY="69.0" text="Descricao produto : " />
       <Label layoutX="111.0" layoutY="95.0" text="Tipo :" />
       <TextField fx:id="txt_n" layoutX="150.0" layoutY="65.0" />
       <TextField fx:id="txt_t" layoutX="150.0" layoutY="95.0" />
