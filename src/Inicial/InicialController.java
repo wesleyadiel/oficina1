@@ -40,6 +40,7 @@ public class InicialController implements Initializable {
     @FXML
     private void SlcButtonAction(ActionEvent event) {
         try {
+        	Iniciar.stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader();            
             Pane root = fxmlLoader.load(getClass().getResource("/Login/Login.fxml").openStream());
             
@@ -54,10 +55,13 @@ public class InicialController implements Initializable {
     @FXML
     private void rcButtonAction(ActionEvent event) {
         try {
+        	Iniciar.stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader();
 
             Pane root = fxmlLoader.load(getClass().getResource("/CadastroUsuario/CadastroUsuario.fxml").openStream());
-            Iniciar.stage.setScene(new Scene(root, 500, 500));
+            
+            Iniciar.stage.centerOnScreen();
+            Iniciar.stage.setScene(new Scene(root));
             Iniciar.stage.show();
         } catch (IOException e) {
             e.printStackTrace();

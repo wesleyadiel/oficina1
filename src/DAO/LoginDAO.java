@@ -10,7 +10,7 @@ public class LoginDAO {
 	public int validarLogin(String usuario, String senha) throws SQLException {
 		Conexao connection = new Conexao();
 				
-		ResultSet rs = connection.executeBusca("SELECT id FROM empregado WHERE (cpf ~* '"+usuario+"')");
+		ResultSet rs = connection.executeBusca("SELECT id FROM usuario WHERE usuario = '"+usuario+"' AND senha = '"+senha+"'");
 		
 		if(rs.next()) {
 			return 1;

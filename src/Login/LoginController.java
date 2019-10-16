@@ -49,11 +49,11 @@ public class LoginController implements Initializable {
 		if (this.dao.validarLogin(txtUsuario.getText(), txtSenha.getText()) == 0) {
 			JOptionPane.showMessageDialog(null, "Usuário/Senha inválidos!", "Login!", JOptionPane.INFORMATION_MESSAGE);
 		} else {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			
+			Iniciar.stage.close();
 			Iniciar.stage.centerOnScreen();
 			Iniciar.stage.setFullScreen(true);
 
+			FXMLLoader fxmlLoader = new FXMLLoader();
 			Pane root = fxmlLoader.load(getClass().getResource("/Menu/Menu.fxml").openStream());
 
 			Iniciar.stage.setScene(new Scene(root));
@@ -63,6 +63,7 @@ public class LoginController implements Initializable {
 
 	@FXML
 	void voltarAction(ActionEvent event) throws IOException {
+		Iniciar.stage.close();
 		FXMLLoader fxmlLoader = new FXMLLoader();
 
 		Pane root = fxmlLoader.load(getClass().getResource("/Inicial/Inicial.fxml").openStream());

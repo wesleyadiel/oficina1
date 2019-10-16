@@ -30,7 +30,7 @@ public class CadastroUsuarioController {
 	@FXML
     void salvar(ActionEvent event) throws SQLException {
         if(validarDados()) {
-        	if(this.dao.salvar(txtUsuario.getText(), txtSenha.getText(), "E") > 0) {
+        	if(this.dao.salvar(txtUsuario.getText(), txtSenha.getText(), "E") == 0) {
     			JOptionPane.showMessageDialog(null, "Falha ao Salvar!", "Cadastro de usuario!", JOptionPane.ERROR_MESSAGE);
     			return;
         	}
@@ -63,7 +63,7 @@ public class CadastroUsuarioController {
 			return false;
         }
 		
-		if(txtSenha.getText() != txtConfirmacao.getText()) {
+		if(!txtSenha.getText().equals(txtConfirmacao.getText())) {
 			JOptionPane.showMessageDialog(null, "Senhas não coincidem!", "Cadastro de usuario!", JOptionPane.WARNING_MESSAGE);
 			return false;
         }
