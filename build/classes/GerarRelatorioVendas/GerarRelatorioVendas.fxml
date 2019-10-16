@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="226.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GerarRelatorioConta.GerarRelatorioContaController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="5.0" prefHeight="228.0" prefWidth="591.0">
+         <children>
+            <Label layoutX="69.0" layoutY="24.0" text="Dados da conta selecionada">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="88.0" text="Número :">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="114.0" layoutY="124.0" text="Saldo :">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_v" layoutX="188.0" layoutY="188.0" mnemonicParsing="false" onAction="#vButton" text="Voltar" />
+            <Button fx:id="btn_s" layoutX="256.0" layoutY="188.0" mnemonicParsing="false" onAction="#sButton" text="Sair" />
+            <Label fx:id="lb_num" layoutX="204.0" layoutY="88.0" prefHeight="36.0" prefWidth="254.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_s" layoutX="204.0" layoutY="124.0" prefHeight="36.0" prefWidth="254.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

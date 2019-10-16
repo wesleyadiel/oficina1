@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="368.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GerarRelatorioEstoqueMercadoria.GerarRelatorioEstoqueMercadoriaController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="1.0" layoutY="2.0" prefHeight="364.0" prefWidth="498.0">
+         <children>
+            <Label layoutX="65.0" layoutY="23.0" text="Estoque de Mercadorias">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_v" layoutX="277.0" layoutY="302.0" mnemonicParsing="false" onAction="#vButtonAction" text="Voltar" />
+            <Button fx:id="btn_s" layoutX="220.0" layoutY="302.0" mnemonicParsing="false" onAction="#sButtonAction" text="Sair" />
+            <TitledPane animated="false" layoutX="155.0" layoutY="76.0" text="Produto em estoque --  Quantidade">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="lvw" prefHeight="181.0" prefWidth="209.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

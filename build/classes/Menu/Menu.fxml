@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="424.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
+    <children>
+        <Button fx:id="btn_sc" layoutX="81.0" layoutY="154.0" onAction="#saButtonAction" prefHeight="25.0" prefWidth="228.0" text="Sacar" />
+      <Label layoutX="14.0" layoutY="14.0" text="Menu do usuário">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_d" layoutX="80.0" layoutY="121.0" onAction="#dButtonAction" prefHeight="25.0" prefWidth="228.0" text="Depositar" />
+      <Button fx:id="btn_grc" layoutX="81.0" layoutY="227.0" onAction="#grcButtonAction" prefHeight="25.0" prefWidth="228.0" text="Gerar relatório da conta" />
+      <Button fx:id="btn_t" layoutX="81.0" layoutY="80.0" onAction="#tButtonAction" prefHeight="25.0" prefWidth="228.0" text="Transferir" />
+      <Button fx:id="btn_rmv" layoutX="80.0" layoutY="190.0" onAction="#rButtonAction" prefHeight="25.0" prefWidth="228.0" text="Remover conta" />
+      <Button fx:id="btn_s" layoutX="81.0" layoutY="379.0" onAction="#sButtonAction" prefHeight="25.0" prefWidth="228.0" text="Sair" />
+      <Button fx:id="btn_v" layoutX="80.0" layoutY="344.0" onAction="#vButtonAction" prefHeight="25.0" prefWidth="228.0" text="Voltar" />
+      <Button fx:id="btn_grtc" layoutX="81.0" layoutY="310.0" onAction="#grtcpButtonAction" text="Relatório de todas as Contas Poupanças" />
+      <Button fx:id="btn_grtp" layoutX="80.0" layoutY="272.0" mnemonicParsing="false" onAction="#grtcButtonAction" prefHeight="25.0" prefWidth="228.0" text="Relatório de todas as Contas Correntes" />
+    </children>
+</AnchorPane>
