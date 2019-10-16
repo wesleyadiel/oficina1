@@ -2,6 +2,7 @@ package CadMercadorias;
 
 import acchpoo.Banco;
 import acchpoo.Conexao;
+import acchpoo.Iniciar;
 import acchpoo.Mercadoria;
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CadMercadoriaController implements Initializable {
@@ -87,8 +89,7 @@ public class CadMercadoriaController implements Initializable {
 
     @FXML
     void sButtonAction(ActionEvent event) {
-        Stage stage = (Stage) btn_s.getScene().getWindow(); //Obtendo a janela atual
-        stage.close();
+        Iniciar.subStage.close();
     }
 
     @FXML
@@ -109,7 +110,6 @@ public class CadMercadoriaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }

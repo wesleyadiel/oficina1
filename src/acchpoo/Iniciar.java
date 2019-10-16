@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Iniciar extends Application {
 
 	public static Stage stage = new Stage();
+	public static Stage subStage = new Stage();
 	
     @SuppressWarnings("static-access")
 	@Override
