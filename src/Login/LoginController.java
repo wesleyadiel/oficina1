@@ -99,7 +99,7 @@ public class LoginController implements Initializable {
 	private void voltar() throws IOException {
 		Iniciar.stage.close();
 		FXMLLoader fxmlLoader = new FXMLLoader();
-
+       
 		Pane root = fxmlLoader.load(getClass().getResource("/Inicial/Inicial.fxml").openStream());
 
 		Iniciar.stage.setScene(new Scene(root));
