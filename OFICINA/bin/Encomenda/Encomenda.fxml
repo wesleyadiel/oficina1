@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Encomenda.EncomendaController">
+   <center>
+      <AnchorPane prefHeight="167.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="14.0" text="Mercadoria:" />
+            <Label layoutX="22.0" layoutY="49.0" text="Quantidade:" />
+            <Label layoutX="241.0" layoutY="49.0" text="Data:" />
+            <Label layoutX="46.0" layoutY="83.0" text="Cliente:" />
+            <TextField fx:id="txtMercadoria" disable="true" layoutX="86.0" layoutY="10.0" prefHeight="25.0" prefWidth="220.0" />
+            <TextField fx:id="txtQuantidade" layoutX="86.0" layoutY="45.0" prefHeight="25.0" prefWidth="146.0" />
+            <TextField fx:id="txtCliente" disable="true" layoutX="86.0" layoutY="79.0" prefHeight="25.0" prefWidth="220.0" />
+            <Button fx:id="btnPesquisarMercadoria" layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#pesquisarMercadoriaAction" prefHeight="25.0" prefWidth="85.0" text="Pesquisar" />
+            <Button fx:id="btnPesquisarCliente" layoutX="316.0" layoutY="79.0" mnemonicParsing="false" onAction="#pesquisarClienteAction" prefHeight="25.0" prefWidth="85.0" text="Pesquisar" />
+            <Button fx:id="btnVoltar" layoutX="316.0" layoutY="115.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <Button fx:id="btnSalvar" layoutX="10.0" layoutY="115.0" mnemonicParsing="false" onAction="#salvarAction" prefHeight="25.0" prefWidth="85.0" text="Salvar" />
+            <DatePicker fx:id="txtData" layoutX="269.0" layoutY="45.0" prefHeight="25.0" prefWidth="132.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="26.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="35.0" layoutY="11.0" text="Encomenda">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

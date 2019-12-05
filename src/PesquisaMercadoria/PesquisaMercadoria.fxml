@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PesquisaMercadoria.PesquisaMercadoriaController">
+   <top>
+      <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtPesquisa" layoutX="14.0" layoutY="12.0" prefHeight="25.0" prefWidth="460.0" />
+            <Button fx:id="btnPesquisar" layoutX="485.0" layoutY="12.0" mnemonicParsing="false" onAction="#pesquisarAction" prefHeight="25.0" prefWidth="101.0" text="Pesquisar" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="372.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tvMercadoria" layoutX="14.0" layoutY="14.0" prefHeight="326.0" prefWidth="573.0">
+              <columns>
+                <TableColumn fx:id="tcCodigo" prefWidth="55.0" text="Código" />
+                <TableColumn fx:id="tcDescricao" prefWidth="380.0" text="Descrição" />
+                  <TableColumn fx:id="tcQtdEstoque" prefWidth="83.0" text="Qtd. Estoque" />
+                  <TableColumn fx:id="tcPreco" prefWidth="54.0" text="Preço" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnVoltar" layoutX="501.0" layoutY="353.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <Button fx:id="btnSelecionar" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#selecionar" prefHeight="25.0" prefWidth="85.0" text="Selecionar" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

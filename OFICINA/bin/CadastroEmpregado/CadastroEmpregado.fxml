@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroEmpregado.CadastroEmpregadoController">
+   <top>
+      <AnchorPane prefHeight="93.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="85.0" layoutY="30.0" text="Cadastro Empregado">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgEmpregado" fitHeight="70.0" fitWidth="75.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="378.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Nome Completo:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="442.0" layoutY="14.0" text="CPF:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="txtBairro" fx:id="txtCidade" layoutX="282.0" layoutY="39.0" prefHeight="25.0" prefWidth="130.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="txtRua" fx:id="txtBairro" layoutX="40.0" layoutY="40.0" prefHeight="23.0" prefWidth="200.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="76.0" text="Cidade:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="44.0" text="Bairo:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="txtNumero" fx:id="txtNumero" layoutX="470.0" layoutY="39.0" prefHeight="25.0" prefWidth="116.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="txtCidade" fx:id="txtRUa" layoutX="56.0" layoutY="71.0" prefHeight="25.0" prefWidth="114.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="423.0" layoutY="44.0" text="Número:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="44.0" text="Rua:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="txtNomeCompleto" fx:id="txtNomeCompleto" layoutX="105.0" layoutY="10.0" prefHeight="25.0" prefWidth="332.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="txtCpf" fx:id="txtCpf" layoutX="471.0" layoutY="10.0" prefHeight="25.0" prefWidth="115.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TableView id="tvEmpregado" fx:id="tvEmpregado" layoutX="14.0" layoutY="106.0" prefHeight="214.0" prefWidth="575.0">
+              <columns>
+                <TableColumn id="tcCodigo" fx:id="tcCodigo" prefWidth="52.0" text="Código" />
+                <TableColumn id="tcNomeCompleto" fx:id="tcNomeCompleto" prefWidth="342.0" text="Nome Completo" />
+                  <TableColumn id="tcCpf" fx:id="tcCpf" prefWidth="114.0" text="CPF" />
+                  <TableColumn id="tcAtivo" fx:id="tcAtivo" prefWidth="66.0" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnVoltar" layoutX="504.0" layoutY="330.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <Button fx:id="btnIncluirNovo" layoutX="409.0" layoutY="330.0" mnemonicParsing="false" onAction="#incluirNovoAction" prefHeight="24.0" prefWidth="85.0" text="Incluir Novo" />
+            <Button id="btnSalvar" fx:id="btnSalvar" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" onAction="#salvarAction" prefHeight="25.0" prefWidth="85.0" text="Salvar" />
+            <CheckBox id="cbxAtivo" fx:id="cbxAtivo" layoutX="535.0" layoutY="75.0" mnemonicParsing="false" text="Ativo" />
+            <Button id="btnEditar" fx:id="btnEditar" layoutX="109.0" layoutY="330.0" mnemonicParsing="false" onAction="#editarAction" prefHeight="25.0" prefWidth="85.0" text="Editar" />
+            <ComboBox fx:id="cboUsuario" layoutX="387.0" layoutY="71.0" prefHeight="25.0" prefWidth="137.0" />
+            <Label layoutX="342.0" layoutY="76.0" text="Usuario;">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="179.0" layoutY="75.0" text="Telefone:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="txtNumero" fx:id="txtTelefone" layoutX="229.0" layoutY="70.0" prefHeight="25.0" prefWidth="104.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

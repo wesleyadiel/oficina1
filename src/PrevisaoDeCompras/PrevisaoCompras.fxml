@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="368.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrevisaoDeCompras.PrevisaoComprasController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="1.0" layoutY="2.0" prefHeight="396.0" prefWidth="553.0">
+         <children>
+            <Label layoutX="117.0" layoutY="14.0" text="Previsao de Compra">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVoltar" layoutX="453.0" layoutY="357.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <TableView fx:id="tvCompra" layoutX="14.0" layoutY="78.0" prefHeight="264.0" prefWidth="524.0">
+              <columns>
+                <TableColumn fx:id="tcCodigo" prefWidth="49.0" text="Código" />
+                <TableColumn fx:id="tcDescricao" prefWidth="309.0" text="Descrição" />
+                  <TableColumn fx:id="tcQtdEstoque" prefWidth="83.0" text="Qtd. Estoque" />
+                  <TableColumn fx:id="tcQtdCompra" prefWidth="82.0" text="Qtd. Compra" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

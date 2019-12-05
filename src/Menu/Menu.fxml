@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastros">
+            <items>
+              <MenuItem fx:id="CadastroMercadoria" mnemonicParsing="false" onAction="#abrirCadastroMercadoriaAction" text="Mercadoria" />
+                  <MenuItem fx:id="CadastroEstoqueMateriaPrima" mnemonicParsing="false" onAction="#abrirCadastroEstoqueMateriaPrimaAction" text="Materia Prima" />
+                  <MenuItem fx:id="CadastroCliente" mnemonicParsing="false" onAction="#abrirCadastroClienteAction" text="Cliente" />
+                  <MenuItem fx:id="CadastroEmpregado" mnemonicParsing="false" onAction="#abrirCadastroEmpregadoAction" text="Empregado" />
+                  <MenuItem fx:id="CadastroGrupo" mnemonicParsing="false" onAction="#abrirCadastroGrupoAction" text="Grupo" />
+                  <MenuItem fx:id="CadastroSubGrupo" mnemonicParsing="false" onAction="#abrirCadastroSubGrupoAction" text="Sub-Grupo" />
+                  <MenuItem fx:id="CadastroUsuario" mnemonicParsing="false" onAction="#abrirCadastroUsuarioAction" text="Usuário" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Lançamentos">
+            <items>
+                  <MenuItem fx:id="Venda" mnemonicParsing="false" onAction="#abrirVendaAction" text="Venda" />
+              <MenuItem fx:id="EstoqueMercadoria" mnemonicParsing="false" onAction="#abrirEstoqueMercadoriaAction" text="Estoque Mercadoria" />
+                  <MenuItem fx:id="EstoqueMateriaPrima" mnemonicParsing="false" onAction="#abrirEstoqueMateriaPrimaAction" text="Estoque Materia Prima" />
+                  <MenuItem fx:id="Encomenda" mnemonicParsing="false" onAction="#abrirEncomandaAction" text="Encomenda" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Relatórios">
+              <items>
+                  <MenuItem fx:id="RelatorioVenda" mnemonicParsing="false" onAction="#abrirRelatorioVendaAction" text="Venda" />
+                <MenuItem fx:id="RelatorioEstoqueMercadoria" mnemonicParsing="false" onAction="#abrirRelatorioEstoqueMercadoriaAction" text="Estoque Mercadoria" />
+                  <MenuItem fx:id="RelatorioEstoqueMateriaPrima" mnemonicParsing="false" onAction="#abrirRelatorioEstoqueMateriaPrimaAction" text="Estoque Materia Prima" />
+                  <MenuItem fx:id="RelatorioPrevisaoCompra" mnemonicParsing="false" onAction="#abrirRelatorioPrevisaoCompraAction" text="Previsão de Compras" />
+              </items>
+            </Menu>
+          <Menu fx:id="mnuSair" mnemonicParsing="false" onAction="#sairAction" text="Opções">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#sairAction" text="Sair" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane fx:id="anchoPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

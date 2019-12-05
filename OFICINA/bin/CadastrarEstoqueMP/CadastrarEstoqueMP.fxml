@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastrarEstoqueMP.CadastrarEstoqueMPController">
+   <children>
+      <Label layoutX="17.0" layoutY="26.0" text="Cadastro de Matéria Prima">
+         <font>
+            <Font name="Microsoft Sans Serif" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="74.0" text="Codigo:" />
+      <TextField fx:id="txtCodigo" disable="true" layoutX="56.0" layoutY="70.0" prefHeight="25.0" prefWidth="75.0" />
+      <Label layoutX="141.0" layoutY="74.0" text="Mercadoria:" />
+      <TextField fx:id="txtMercadoria" disable="true" layoutX="204.0" layoutY="70.0" prefHeight="25.0" prefWidth="270.0" />
+      <Button fx:id="btnPesquisar" layoutX="486.0" layoutY="70.0" mnemonicParsing="false" onAction="#pesquisarAction" prefHeight="25.0" prefWidth="100.0" text="Pesquisar" />
+      <TableView fx:id="tvMateriaPrima" editable="true" layoutX="14.0" layoutY="106.0" prefHeight="249.0" prefWidth="573.0">
+        <columns>
+          <TableColumn fx:id="tcCodigo" editable="false" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="tcDescricao" editable="false" prefWidth="424.0" text="Descrição" />
+            <TableColumn fx:id="tcQuantidade" prefWidth="72.0" resizable="false" text="Quantidade" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnVoltar" layoutX="502.0" layoutY="367.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+      <Button fx:id="btnIncluirMateriaPrima" layoutX="17.0" layoutY="367.0" mnemonicParsing="false" onAction="#incluirMateriaPrimaAction" text="Incluir Materia Prima" />
+      <Button layoutX="153.0" layoutY="367.0" mnemonicParsing="false" onAction="#limparAction" prefHeight="25.0" prefWidth="85.0" text="Limpar" />
+      <Button layoutX="249.0" layoutY="367.0" mnemonicParsing="false" onAction="#salvarAction" prefHeight="25.0" prefWidth="85.0" text="Salvar" />
+   </children>
+</AnchorPane>

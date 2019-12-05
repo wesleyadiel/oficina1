@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PesquisaCliente.PesquisaClienteController">
+   <top>
+      <AnchorPane prefHeight="55.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtPesquisa" layoutX="14.0" layoutY="19.0" prefHeight="25.0" prefWidth="316.0" />
+            <Button fx:id="btnPesquisa" layoutX="335.0" layoutY="19.0" mnemonicParsing="false" onAction="#pesquisarAction" prefHeight="25.0" prefWidth="85.0" text="Pesquisar" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="42.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnVoltar" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <Button fx:id="btnSelecionar" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#selecionarAction" prefHeight="25.0" prefWidth="85.0" text="Selecionar" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tvCodigo" layoutX="14.0" prefHeight="303.0" prefWidth="405.0">
+              <columns>
+                <TableColumn fx:id="tcCodigo" prefWidth="54.0" text="Código" />
+                <TableColumn fx:id="tcNomeCompleto" prefWidth="264.0" text="Nome Completo" />
+                  <TableColumn fx:id="tcCpf" prefWidth="86.0" text="CPF" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

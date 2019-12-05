@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadMercadorias.CadMercadoriaController">
+    <children>
+        <Button fx:id="btn_fc" layoutX="14.0" layoutY="479.0" onAction="#fButtonAction" prefHeight="25.0" prefWidth="180.0" text="Salvar" />
+      <Label layoutX="43.0" layoutY="21.0" text="Cadastrar Mercadorias">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="76.0" text="Tipo:" />
+      <Button fx:id="btn_v" layoutX="407.0" layoutY="479.0" mnemonicParsing="false" onAction="#vButtonAction" prefHeight="25.0" prefWidth="122.0" text="Voltar" />
+      <Label layoutX="25.0" layoutY="76.0" text="Descrição:" />
+      <Label layoutX="43.0" layoutY="111.0" text="Marca:" />
+      <TextField fx:id="txt_m" layoutX="80.0" layoutY="107.0" prefHeight="25.0" prefWidth="247.0" />
+      <TextField fx:id="txt_d" layoutX="80.0" layoutY="72.0" prefHeight="25.0" prefWidth="283.0" />
+      <Label layoutX="336.0" layoutY="111.0" text="Quantidade:" />
+      <TextField fx:id="txt_q" disable="true" editable="false" layoutX="402.0" layoutY="107.0" prefHeight="25.0" prefWidth="131.0" />
+      <Label layoutX="45.0" layoutY="180.0" text="Grupo:" />
+      <ComboBox fx:id="cboTipo" layoutX="401.0" layoutY="72.0" prefHeight="25.0" prefWidth="131.0" />
+      <ComboBox fx:id="cboGrupo" layoutX="82.0" layoutY="176.0" prefHeight="25.0" prefWidth="150.0" />
+      <ComboBox fx:id="cboSubgrupo" layoutX="302.0" layoutY="176.0" prefWidth="150.0" />
+      <Label layoutX="241.0" layoutY="180.0" text="SubGrupo :" />
+      <Label layoutX="57.0" layoutY="146.0" text="Cor:" />
+      <TextField fx:id="txtCor" layoutX="80.0" layoutY="142.0" prefHeight="25.0" prefWidth="106.0" />
+      <Label layoutX="195.0" layoutY="146.0" text="Tamanho:" />
+      <TextField fx:id="txtTamanho" layoutX="248.0" layoutY="142.0" />
+      <Text layoutX="406.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preço:" />
+      <TextField fx:id="txtPreco" layoutX="439.0" layoutY="142.0" prefHeight="25.0" prefWidth="94.0" />
+      <TableView fx:id="tvMercadoria" layoutX="14.0" layoutY="208.0" prefHeight="227.0" prefWidth="521.0">
+        <columns>
+          <TableColumn fx:id="tcCodigo" prefWidth="45.0" text="Código" />
+          <TableColumn fx:id="tcDescricao" prefWidth="242.0" text="Descrição" />
+            <TableColumn fx:id="tcTipo" minWidth="0.0" prefWidth="68.0" text="Tipo" />
+            <TableColumn fx:id="tcGrupo" prefWidth="93.0" text="Grupo" />
+            <TableColumn fx:id="tcPreco" prefWidth="72.0" text="Preço" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEditar" layoutX="14.0" layoutY="444.0" mnemonicParsing="false" onAction="#editarAction" prefHeight="25.0" prefWidth="85.0" text="Editar" />
+      <Button fx:id="btnExcluir" layoutX="109.0" layoutY="444.0" mnemonicParsing="false" onAction="#exluirAction" prefHeight="25.0" prefWidth="85.0" text="Excluir" />
+      <Button fx:id="btnIncluirNovo" layoutX="275.0" layoutY="479.0" mnemonicParsing="false" onAction="#incluirNovoAction" prefHeight="25.0" prefWidth="122.0" text="Incluir Novo" />
+    </children>
+</AnchorPane>

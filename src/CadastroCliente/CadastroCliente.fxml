@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroCliente.CadastroClienteController">
+   <center>
+      <AnchorPane prefHeight="397.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="15.0" layoutY="14.0" text="Nome Completo:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="398.0" layoutY="14.0" text="Telefone:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="49.0" text="CPF:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="229.0" layoutY="49.0" text="Rua:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="459.0" layoutY="49.0" text="Número:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNomeCompleto" layoutX="105.0" layoutY="10.0" prefHeight="25.0" prefWidth="283.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtNumeroTelefone" layoutX="449.0" layoutY="10.0" prefHeight="25.0" prefWidth="141.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtCpf" layoutX="104.0" layoutY="45.0" prefHeight="25.0" prefWidth="115.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtRUa" layoutX="255.0" layoutY="45.0" prefHeight="25.0" prefWidth="194.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtNumero" layoutX="506.0" layoutY="45.0" prefHeight="25.0" prefWidth="84.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="72.0" layoutY="83.0" text="Bairo:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="264.0" layoutY="83.0" text="Cidade:">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBairro" layoutX="104.0" layoutY="80.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtCidade" layoutX="306.0" layoutY="79.0" prefHeight="25.0" prefWidth="199.0">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSalvar" layoutX="20.0" layoutY="324.0" mnemonicParsing="false" onAction="#salvarAction" prefHeight="25.0" prefWidth="85.0" text="Salvar" />
+            <Button fx:id="btnVoltar" layoutX="495.0" layoutY="324.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="25.0" prefWidth="85.0" text="Voltar" />
+            <Button fx:id="btnIncluirNovo" layoutX="400.0" layoutY="324.0" mnemonicParsing="false" onAction="#incluirNovoAction" prefHeight="25.0" prefWidth="85.0" text="Incluir Novo" />
+            <TableView fx:id="tvCliente" layoutX="10.0" layoutY="114.0" prefHeight="200.0" prefWidth="580.0">
+              <columns>
+                <TableColumn fx:id="tcCodigo" editable="false" prefWidth="45.0" resizable="false" text="Código" />
+                <TableColumn fx:id="tcNomeCompleto" editable="false" prefWidth="286.0" resizable="false" text="Nome Completo" />
+                  <TableColumn fx:id="tcTelefone" editable="false" minWidth="0.0" prefWidth="90.0" resizable="false" text="Telefone" />
+                  <TableColumn fx:id="tcCpf" editable="false" prefWidth="89.0" resizable="false" text="CPF" />
+                  <TableColumn fx:id="tcAtivo" prefWidth="69.0" />
+              </columns>
+            </TableView>
+            <CheckBox fx:id="cbxAtivo" layoutX="519.0" layoutY="83.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="58.0" text="Ativo" />
+            <Button fx:id="btnEditar" layoutX="115.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAction" prefHeight="25.0" prefWidth="85.0" text="Editar" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="88.0" layoutY="25.0" text="Cadastro de Cliente">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgClient" fitHeight="70.0" fitWidth="75.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

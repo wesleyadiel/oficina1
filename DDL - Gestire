@@ -1,0 +1,103 @@
+CREATE TABLE Empregado(
+	id SERIAL NOT NULL,
+	nomecompleto VARCHAR(100),
+	cpf VARCHAR(30),
+	telefone VARCHAR(30),
+	cidade VARCHAR(40),
+	bairro VARCHAR(40),
+	rua VARCHAR(40),
+	numero VARCHAR(40),
+	ativo boolean,
+	idusuario INTEGER DEFAULT 0,
+	CONSTRAINT empregado_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE Cliente(
+	id SERIAL NOT NULL,
+	nomecompleto VARCHAR(40),
+	telefone VARCHAR(30),
+	cpf VARCHAR(30),
+	cidade VARCHAR(40),
+	bairro VARCHAR(40),
+	rua VARCHAR(40),
+	numero VARCHAR(40),
+	senha VARCHAR(50),
+	ativo boolean DEFAULT true,
+	CONSTRAINT cliente_PK PRIMARY KEY(id)
+	
+);
+
+CREATE TABLE Grupo(
+	id SERIAL NOT NULL,
+	descricao VARCHAR(50),
+	CONSTRAINT grupo_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE SubGrupo(
+	id SERIAL NOT NULL,
+	idgrupo INTEGER,
+	descricao VARCHAR(50),
+	CONSTRAINT subgrupo_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE Mercadoria(
+	id SERIAL NOT NULL,
+	idgrupo INTEGER,
+	idsubgrupo INTEGER,
+	descricao VARCHAR(100),
+	marca VARCHAR(100),
+	idtipo INTEGER,
+	preco NUMERIC,
+	cor VARCHAR(50),
+	tamanho VARCHAR(30),
+	CONSTRAINT mercadoria_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE MateriaPrima(
+	idMercadoria INTEGER,
+	idMercadoriaMateriaPrima INTEGER,
+	quantidade NUMERIC,
+	CONSTRAINT materiaprima_PK PRIMARY KEY(idmercadoria, idmercadoriamateriaprima)
+);
+
+CREATE TABLE Encomenda(
+	id SERIAL NOT NULL,
+	idcliente INTEGER,
+	idmercadoria INTEGER,
+	data DATE,
+	quantidade DECIMAL,
+	finalizada BOOLEAN DEFAULT FALSE,
+	CONSTRAINT encomenda_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE estoqueMercadoria(
+	idmercadoria INTEGER NOT NULL,
+	quantidade DECIMAL,
+	CONSTRAINT estoquemercadoria_PK PRIMARY KEY(idmercadoria)
+);
+
+CREATE TABLE estoqueMP(
+	idmercadoria INTEGER,
+	quantidade DECIMAL,
+	CONSTRAINT estoquemp_PK PRIMARY KEY(idmercadoria)
+);
+
+CREATE TABLE venda(
+	id SERIAL NOT NULL,
+	idcliente INTEGER,
+	idmercadoria INTEGER,
+	quantidade DECIMAL,
+	valordesconto DECIMAL,
+	valorvenda DECIMAL,
+	valormercadoria DECIMAL,
+	CONSTRAINT venda_PK PRIMARY KEY(id)
+);
+
+CREATE TABLE usuario(
+	id SERIAL NOT NULL,
+	usuario VARCHAR(50),
+	senha VARCHAR(50),
+	tipo VARCHAR(2),
+	CONSTRAINT usuario_PK PRIMARY KEY(id)
+);
+ 
